@@ -224,20 +224,20 @@ def plot_movement_map(df):
 # @st.cache_data
 def load_cust_data():
     """Load and cache the original dataset."""
-    return pd.read_excel('/Users/ankit/Downloads/EDA_IB/New_Client_Data/22nd Feb 24/customer master/customer master data with cluster information.xlsx')
+    return pd.read_excel('customer master data with cluster information.xlsx')
 
 # @st.cache_data
 def load_order_data():
     """Load and cache the original dataset."""
-    return pd.read_csv('/Users/ankit/Downloads/EDA_IB/New_Client_Data/df_tr_pr_&_dhl_with_cust_no_23.csv',parse_dates=['Lst.datum'])
+    return pd.read_csv('df_tr_pr_&_dhl_with_cust_no_23.csv',parse_dates=['Lst.datum'])
 
 # @st.cache_data
 def load_dist_data():
-    return pd.read_csv('/Users/ankit/Downloads/EDA_IB/New_Client_Data/data from downloads/road_distance_between_zipcodes(5).csv')
+    return pd.read_csv('road_distance_between_zipcodes(5).csv')
 
 # @st.cache_data
 def load_rate_card_df():
-    return pd.read_excel('/Users/ankit/Downloads/Rate Card.xlsx')
+    return pd.read_excel('Rate Card.xlsx')
 
 rate_card_df = load_rate_card_df()
 df_road_dist=load_dist_data()
