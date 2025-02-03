@@ -395,11 +395,11 @@ if run_button:
     allocation_data_cleaned=pd.merge(allocation_data_cleaned,new_city,left_on=['Postal Code New int'],right_on='postel code',how='left')
     allocation_data_cleaned=pd.merge(allocation_data_cleaned,a,left_on=['Postal Code original int'],right_on=['orig_postal_code'],how='left')
     allocation_data_cleaned=pd.merge(allocation_data_cleaned,b,left_on=['Postal Code New int'],right_on=['dest_postal_code'],how='left')
-
+ 
 
     allocation_data_cleaned.rename(columns={'Tier2_DC':'original DC','Tier1_DC':'New DC','Distance_to_Tier1':'Distance (Original to New DP)','Original_Distance_to_DC':'Distance (DC to Orig DP)','New_Distance_to_DC':'Distance (DC to New DP)','customer cluster':'Customer Cluster Original'},inplace=True)
     allocation_data_cleaned['Customer Cluster New']='Wholesale'
-
+    allocation_data_cleaned=allocation_data_cleaned.drop_duplicates()
 
 
     allocation_data_cleaned_filt=allocation_data_cleaned[['Customer Original','Postal Code original','City Original' , 'Street Original','Customer Cluster Original','Customer New','Postal Code New','City New', 'Street New','Customer Cluster New','original DC','New DC','Distance (Original to New DP)','Distance (DC to Orig DP)','Distance (DC to New DP)','Allocated_qty']]
