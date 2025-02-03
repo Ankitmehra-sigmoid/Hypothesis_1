@@ -403,7 +403,7 @@ if run_button:
 
 
     allocation_data_cleaned_filt=allocation_data_cleaned[['Customer Original','Postal Code original','City Original' , 'Street Original','Customer Cluster Original','Customer New','Postal Code New','City New', 'Street New','Customer Cluster New','original DC','New DC','Distance (Original to New DP)','Distance (DC to Orig DP)','Distance (DC to New DP)','Allocated_qty']]
-
+    allocation_data_cleaned_filt=allocation_data_cleaned_filt.drop_duplicates()
     
     
     col1, col2,col3 = st.columns(3)
