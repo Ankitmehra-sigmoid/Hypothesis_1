@@ -329,6 +329,7 @@ if run_button:
 
 
     allocation_df=allocate_tier2_to_tier1(df_orig, df_new, df_road_dist, max_distance_threshold=dist_threshold)
+    allocation_df=allocation_df.drop_duplicates(subset=['Tier2_drop_point'],keep='first')
     
     allocation_df_with_dist=pd.merge(allocation_df,df_new[['drop_point','DC','Km mode']],left_on=['Tier1_drop_point','Tier1_DC'],right_on=['drop_point','DC'],how='left')
     
